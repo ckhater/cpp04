@@ -6,7 +6,7 @@
 class Cat:public Animal{
 	public:
 		Cat(void);
-		virtual ~Cat(void);
+		~Cat(void);
 		Cat(const Cat &ct);
 		Cat &operator=(const Cat &ct);
 		void makeSound()const;

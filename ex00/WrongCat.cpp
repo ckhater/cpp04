@@ -9,7 +9,7 @@ WrongCat::~WrongCat(void){
 	std::cout<< "WrongCat destructor called"<< std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &ct){
+WrongCat::WrongCat(const WrongCat &ct):WrongAnimal(ct){
 	std::cout<< "WrongCat copy constructor called"<< std::endl;
 	*this = ct;
 }

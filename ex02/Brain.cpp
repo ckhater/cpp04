@@ -2,7 +2,6 @@
 
 Brain::Brain(void){
 	std::cout<< "🧠 Brain constructor called"<< std::endl;
-	j = 0;
 }
 
 Brain::~Brain(void){
@@ -16,9 +15,8 @@ Brain::Brain(Brain const &br){
 
 Brain &Brain::operator=(Brain const &br){
 	std::cout<< "🧠Brain copy assignement called"<< std::endl;
-	this->j = br.j;
 	int i =0;
-	while(i <= this->j)
+	while(i < 100)
 	{
 		this->ideas[i] = br.ideas[i];
 		i++;
@@ -28,7 +26,7 @@ Brain &Brain::operator=(Brain const &br){
 
 std::string Brain::getIdea(int i)
 {
-	if(i > this->j || i < 0)
+	if(i > 100 || i < 0)
 	{
 		std::cout<< "⁉️ this idea doesn't exist";
 		return "";
@@ -36,14 +34,13 @@ std::string Brain::getIdea(int i)
 	return this->ideas[i];
 }
 
-void Brain::setIdea(std::string idea){
-	if(this->j < 100)
+void Brain::setIdea(int i, std::string idea){
+	if(i < 0 || i >= 100)
 	{
-		this->ideas[this->j] = idea;
-		this->j++;
+		std::cout<< "from 0️⃣ to 9️⃣9️⃣"<< std::endl;
+		return;
 	}
-	else
-		std::cout << "Brain is full !! 🤯"<< std::endl;
+	this->ideas[i] = idea;
 }
 
 

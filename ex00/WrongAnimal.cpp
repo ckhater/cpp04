@@ -21,7 +21,7 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &anml){
 }
 
 void WrongAnimal::makeSound(void)const{
-	std::cout<< this->type<< " sound"<<std::endl;
+	std::cout<<"a WrongAnimal sound"<<std::endl;
 }
 
 std::string WrongAnimal::getType(void)const{

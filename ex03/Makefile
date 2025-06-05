@@ -1,7 +1,6 @@
-Name=abstract
+Name=interface
 FLAG= -std=c++98 -Wall -Wextra -Werror -g3
-SRC= main.cpp Brain.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
-
+SRC= main.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp AMateria.cpp
 OBJ=$(SRC:.cpp=.o)
 
 all:$(Name)

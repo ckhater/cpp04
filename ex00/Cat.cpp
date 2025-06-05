@@ -9,7 +9,7 @@ Cat::~Cat(void){
 	std::cout<< "Cat destructor called"<< std::endl;
 }
 
-Cat::Cat(const Cat &ct){
+Cat::Cat(const Cat &ct):Animal(ct){
 	std::cout<< "Cat copy constructor called"<< std::endl;
 	*this = ct;
 }

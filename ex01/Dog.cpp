@@ -13,13 +13,17 @@ Dog::~Dog(void){
 
 Dog::Dog(const Dog &dg):Animal(dg){
 	std::cout<< "Dog copy constructor called"<< std::endl;
-	*this = dg;
+	this->br = new Brain();
 }
 
 Dog	&Dog::operator=(const Dog &dg){
 	std::cout<< "Dog copy assignement operator called"<< std::endl;
 	this->type = dg.type;
-	this->br = new Brain();
+	if(this != &dg)
+	{
+		delete this->br;
+		this->br = new Brain(*dg.br);
+	}
 	return *this;
 }
 
@@ -27,8 +31,8 @@ void	Dog::makeSound(void)const{
 	std::cout<< this->type<< " 🐶 woof woof"<< std::endl;
 }
 
-void	Dog::setBrain(std::string idea){
-	br->setIdea(idea);
+void	Dog::setBrain(int i, std::string idea){
+	br->setIdea(i, idea);
 }
 
 std::string Dog::getBrain(int i){

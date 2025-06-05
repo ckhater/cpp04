@@ -8,12 +8,12 @@ class Dog: public Animal{
 		Brain *br;
 	public:
 		Dog(void);
-		virtual ~Dog(void);
+		~Dog(void);
 		Dog(const Dog &dg);
 		Dog &operator=(const Dog &dg);
 		void	makeSound(void)const;
 		std::string	getBrain(int i);
-		void	setBrain(std::string idea);
+		void	setBrain(int i, std::string idea);
 		
 };
 
